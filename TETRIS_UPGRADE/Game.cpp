@@ -28,7 +28,7 @@ Game::~Game() {
 }
 
 void Game::run() {
-    cout << level << endl;
+    //cout << level << endl;
         score = 0;
         lines = 0;
         if (is_gameover == 3) {
@@ -199,11 +199,11 @@ int Game::check_full_line()
             if (total_block[i][j] == 0)
                 break;
         }
-        if (j == 13)	//ÇÑÁÙÀÌ ´Ù Ã¤¿öÁ³À½
+        if (j == 13)	//í•œì¤„ì´ ë‹¤ ì±„ì›Œì¡ŒìŒ
         {
 
             lines++;
-            //ÁÙ°ú ·¹º§ È®ÀÎ
+            //ì¤„ê³¼ ë ˆë²¨ í™•ì¸
 
 
 
@@ -214,12 +214,12 @@ int Game::check_full_line()
                     init(); 
                     printer->show_gamestat(level, score, stages->get_clear_line(level) - lines);
                 }
-                //¸¸¾à ·¹º§ÀÌ 10ÀÌ µÇ´Â °æ¿ì ¼î¿ì Å¬¸®¾î¸¦ ÁøÇà
+                //ë§Œì•½ ë ˆë²¨ì´ 10ì´ ë˜ëŠ” ê²½ìš° ì‡¼ìš° í´ë¦¬ì–´ë¥¼ ì§„í–‰
                 else {
-                    //show_clear_screenÀÌ¶ó´Â °Í¿¡¼­ 1ÀÇ °ªÀ» ¹ÞÀ¸¸é 3À» ¹ÝÈ¯
-                    // --> merge_block()¿¡¼­ ÀÌ °ª¿¡ µû¸¥ ¹ÝÈ¯°ªÀ» ¸¸µéµµ·ÏÇÔ
-                    //¸ÞÀÎ ÇÔ¼ö¿¡¼­ is_game_overÀÌ 3ÀÏ¶§ breakÇÔ
-                    //ÀÌ¶§ È­¸é¿¡¼­ show_logo()°¡ Àß º¸ÀÌÁö ¾Ê´Â´Ù´Â °ÍÀ» È®ÀÎÇÏ¿© show_logo() ¾Õ cls¸¦ ÅëÇØ Áö¿ì°í ´Ù½Ã ±×¸®µµ·Ï ÇÔ.
+                    //show_clear_screenì´ë¼ëŠ” ê²ƒì—ì„œ 1ì˜ ê°’ì„ ë°›ìœ¼ë©´ 3ì„ ë°˜í™˜
+                    // --> merge_block()ì—ì„œ ì´ ê°’ì— ë”°ë¥¸ ë°˜í™˜ê°’ì„ ë§Œë“¤ë„ë¡í•¨
+                    //ë©”ì¸ í•¨ìˆ˜ì—ì„œ is_game_overì´ 3ì¼ë•Œ breakí•¨
+                    //ì´ë•Œ í™”ë©´ì—ì„œ show_logo()ê°€ ìž˜ ë³´ì´ì§€ ì•ŠëŠ”ë‹¤ëŠ” ê²ƒì„ í™•ì¸í•˜ì—¬ show_logo() ì•ž clsë¥¼ í†µí•´ ì§€ìš°ê³  ë‹¤ì‹œ ê·¸ë¦¬ë„ë¡ í•¨.
 
                     printer->show_total_block(total_block, level);
                     lines = 0;
@@ -233,7 +233,7 @@ int Game::check_full_line()
             printer->gotoxy(1 * 2 + printer->get_x(), i + printer->get_y());
             for (j = 1; j < 13; j++)
             {
-                printf("¡à");
+                printf("â–¡");
                 Sleep(10);
             }
             printer->gotoxy(1 * 2 + printer->get_x(), i + printer->get_y());
