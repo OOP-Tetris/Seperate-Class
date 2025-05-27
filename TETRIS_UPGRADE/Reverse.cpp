@@ -28,7 +28,7 @@ int Reverse::strike_check() {
 int Reverse::move_block() {
     printer->erase_cur_block(*curr_block);
     curr_block->move_up();
-    if (strike_check()) {
+    if (strike_check() == 1) {
         curr_block->move_down();
         if (curr_block->get_y() > 20) return 1;
         merge_block();
